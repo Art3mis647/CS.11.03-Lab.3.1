@@ -31,6 +31,7 @@ import java.util.Scanner; //used to scan for input
 public class TextBasedGame {
     public static void main(String[] args) {
         System.out.println("Please ensure your console is at its biggest size, as ASCII art may not load properly in smaller console sizes.");
+        clear();
         sleep(5000);
         introSequence();
 
@@ -47,10 +48,10 @@ public class TextBasedGame {
         clear();
         slowprint("Your memory is a bit fogged up now, but all you know is that you need to get out of here.");
         slowprint("...");
-        slowprint("Well, " + name + " are you ready?");
-        String yesNo = yesNoScanner.nextLine();
         boolean randomBool = true;
         while (randomBool){
+            slowprint("Well, " + name + " are you ready?");
+            String yesNo = yesNoScanner.nextLine();
             if (yesNo.equalsIgnoreCase("yes")){
                 slowprint("Then its time for...");
                 fastprint("\n" + //prison escape asci art
@@ -70,6 +71,7 @@ public class TextBasedGame {
                         "      ");
                 //i used % here ;-;
                 sleep(20000%15000);
+                day1();
             }
             else if (yesNo.equalsIgnoreCase("no")){ //i was being creative with this feature, if no one stumbles upon it i will be sad sad sad which is bad bad bad
                 slowprint("Uh, okay");
